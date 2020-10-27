@@ -3,7 +3,7 @@ package br.ufsm.csi.seghibernate.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="COMUNIDADE")
+@Table(name = "COMUNIDADE")
 public class Comunidade {
 
     @Id

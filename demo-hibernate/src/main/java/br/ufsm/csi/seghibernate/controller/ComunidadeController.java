@@ -14,14 +14,15 @@ public class ComunidadeController {
     private ComunidadeService comunidadeService;
     @Autowired
     private AtorService atorService;
+
     @GetMapping("/criacomunidade")
-    public String criaComunidade(String nome, String descricao, Long idCriadaPor){
+    public String criaComunidade(String nome, String descricao, Long idCriadaPor) {
 
         Comunidade comunidade = new Comunidade();
         comunidade.setDescricao(descricao);
         comunidade.setNome(nome);
-        if(idCriadaPor != null){
-          comunidade.setCriadaPor(atorService.findId(idCriadaPor));
+        if (idCriadaPor != null) {
+            comunidade.setCriadaPor(atorService.findId(idCriadaPor));
         }
         comunidadeService.save(comunidade);
 

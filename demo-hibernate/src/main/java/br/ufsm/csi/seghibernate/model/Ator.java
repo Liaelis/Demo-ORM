@@ -10,12 +10,12 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)//para mapear herança
-@Table(name="ATORES")
+@Table(name = "ATORES")
 public class Ator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ATOR")
-    @SequenceGenerator(name ="SEQ_aTOR", sequenceName="SEQ_ATOR")
+    @SequenceGenerator(name = "SEQ_aTOR", sequenceName = "SEQ_ATOR")
     private Long id;
     private String cpf;
     private String nome;
@@ -27,8 +27,8 @@ public class Ator {
 
     @ManyToMany
     //vai gerar tabela de ligação
-    @JoinTable(name="PAPEIS_ATORES", joinColumns ={@JoinColumn(name="ID_ATOR")},
-    inverseJoinColumns = {@JoinColumn(name ="ID_PAPEL" )}) //mapeia os id das duas tabelas que geram a nova
+    @JoinTable(name = "PAPEIS_ATORES", joinColumns = {@JoinColumn(name = "ID_ATOR")},
+            inverseJoinColumns = {@JoinColumn(name = "ID_PAPEL")}) //mapeia os id das duas tabelas que geram a nova
     private Collection<Papel> papeis;
 
     public Collection<Papel> getPapeis() {

@@ -13,7 +13,7 @@ public class PapelController {
     private PapelService papelService;
 
     @GetMapping("/criaPapel")
-    public String criaPapel(String nome, String descricao){
+    public String criaPapel(String nome, String descricao) {
         Papel papel = new Papel();
         papel.setNome(nome);
         papel.setDescricao(descricao);

@@ -12,16 +12,16 @@ public class PapelService {
     @Autowired
     private PapelRepository papelRepository;
 
-    public void save(Papel papel){
+    public void save(Papel papel) {
         papelRepository.save(papel);
     }
 
-    public Papel findById(long id){
+    public Papel findById(long id) {
         Optional<Papel> op = papelRepository.findById(id);
-        if(op.isEmpty()){
+        if (op.isEmpty()) {
             System.out.printf("não encontrado");
             return null;
-        }else{
+        } else {
             Papel papel = op.get();
             return papel;
         }

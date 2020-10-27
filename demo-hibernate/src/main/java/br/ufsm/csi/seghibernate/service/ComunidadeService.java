@@ -10,7 +10,7 @@ public class ComunidadeService {
     @Autowired
     private ComunidadeRepository comunidadeRepository;
 
-    public void save(Comunidade comunidade){
+    public void save(Comunidade comunidade) {
         comunidadeRepository.save(comunidade);
     }
 }
